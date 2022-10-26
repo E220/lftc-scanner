@@ -6,9 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class TokenReader {
+public class TokenReader implements Reader {
     private List<String> tokens;
 
+    @Override
     public void read(String filename) throws ReaderException {
         tokens = new ArrayList<>();
         try(final Scanner scanner = new Scanner(new File(filename))) {

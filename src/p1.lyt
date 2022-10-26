@@ -1,0 +1,6 @@
+do {
+    let x, y be numbers.
+    write "Input two numbers".
+    read x, y.
+    write "The sum of the two numbers is:", x + y.
+}
