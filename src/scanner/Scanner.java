@@ -18,16 +18,15 @@ public class Scanner {
     private void scan(String line) {
         MemoTrie trie = this.trie;
         final char[] chars = line.toCharArray();
-        for (int i = 0; i < chars.length; i++) {
-            char character = chars[i];
+        for (char character : chars) {
             if (trie.contains(character)) {
                 trie = trie.next(character);
-            } else if (trie == this.trie) {
-                System.out.println(character);
             } else {
-                System.out.println(trie.getString().toString());
-                trie = this.trie;
-                i--;
+                if (trie != this.trie) {
+                    System.out.println(trie.getString().toString());
+                    trie = this.trie;
+                }
+                System.out.println(character);
             }
         }
         System.out.println(trie.getString().toString());
