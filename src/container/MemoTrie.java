@@ -31,6 +31,10 @@ public class MemoTrie {
         return children.get(character);
     }
 
+    public MemoTrie root() {
+        return Objects.isNull(parent) ? this : parent.root();
+    }
+
     public StringBuilder getString() {
         if (Objects.isNull(parent)) {
             return new StringBuilder();
