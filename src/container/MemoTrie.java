@@ -3,20 +3,15 @@ package container;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class MemoTrie {
 
-    private final MemoTrie parent;
-    private final Character value;
     private final Map<Character, MemoTrie> children = new HashMap<>();
-    private MemoTrie(MemoTrie parent, Character value) {
-        this.parent = parent;
-        this.value = value;
+    private MemoTrie() {
     }
 
     public static MemoTrie build(List<String> strings) {
-        final MemoTrie trie = new MemoTrie(null, null);
+        final MemoTrie trie = new MemoTrie();
         for (final String string : strings) {
             trie.add(string, 0);
         }
@@ -31,18 +26,6 @@ public class MemoTrie {
         return children.get(character);
     }
 
-    public MemoTrie root() {
-        return Objects.isNull(parent) ? this : parent.root();
-    }
-
-    public StringBuilder getString() {
-        if (Objects.isNull(parent)) {
-            return new StringBuilder();
-        } else {
-            return parent.getString().append(value);
-        }
-    }
-
     private void add(String string, int index) {
         if (index == string.length()) {
             return;
@@ -52,7 +35,7 @@ public class MemoTrie {
             children.get(character).add(string, index + 1);
             return;
         }
-        children.put(character, new MemoTrie(this, character));
+        children.put(character, new MemoTrie());
         children.get(character).add(string, index + 1);
     }
 }

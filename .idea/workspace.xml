@@ -81,8 +81,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/scanner/Scanner.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="8" />
+          <line>33</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
