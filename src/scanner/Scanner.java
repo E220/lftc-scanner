@@ -21,13 +21,13 @@ public class Scanner {
         for (char character : chars) {
             if (trie.contains(character)) {
                 trie = trie.next(character);
-            } else {
-                if (trie != this.trie) {
-                    System.out.println(trie.getString().toString());
-                    trie = this.trie;
-                }
-                System.out.println(character);
+                continue;
             }
+            if (trie != this.trie) {
+                System.out.println(trie.getString().toString());
+                trie = this.trie;
+            }
+            System.out.println(character);
         }
         System.out.println(trie.getString().toString());
     }
