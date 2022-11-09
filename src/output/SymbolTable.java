@@ -1,4 +1,4 @@
-package symboltable;
+package output;
 
 import container.BinaryTree;
 
