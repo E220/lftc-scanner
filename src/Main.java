@@ -4,6 +4,7 @@ import readers.TokenReader;
 import scanner.Scanner;
 
 import java.util.List;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,7 +12,7 @@ public class Main {
         Scanner scanner;
         try {
             tokenReader.read("src/token.in");
-            final List<String> tokens = tokenReader.getTokens();
+            final Set<String> tokens = tokenReader.getTokens();
             System.out.println(tokens);
             scanner = new Scanner(tokens);
         } catch (ReaderException e) {

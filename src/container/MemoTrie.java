@@ -1,8 +1,8 @@
 package container;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class MemoTrie {
 
@@ -10,7 +10,7 @@ public class MemoTrie {
     private MemoTrie() {
     }
 
-    public static MemoTrie build(List<String> strings) {
+    public static MemoTrie build(Set<String> strings) {
         final MemoTrie trie = new MemoTrie();
         for (final String string : strings) {
             trie.add(string, 0);
