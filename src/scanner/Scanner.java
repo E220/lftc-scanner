@@ -8,15 +8,17 @@ import java.util.Set;
 
 public class Scanner {
     private final MemoTrie trie;
+    private final Classifier classifier;
 
     public Scanner(Set<String> tokens) {
         this.trie = MemoTrie.build(tokens);
+        this.classifier = new Classifier(tokens);
     }
 
     public void scan(List<String> lines) {
         lines.forEach(line -> {
             List<String> values = this.scan(this.trie, line, 0, new StringBuilder(), false);
-            values.forEach(System.out::println);
+            values.forEach(value -> System.out.println(value + " " + classifier.classify(value)));
         });
     }
 
