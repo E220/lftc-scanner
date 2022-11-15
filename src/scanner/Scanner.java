@@ -31,7 +31,13 @@ public class Scanner {
         final Character character = line.charAt(index);
 
         if (stringMode) {
-            return scan(this.trie, line, index + 1, value.append(character), !character.equals('\"'));
+            if (character.equals('\"')) {
+                list.add(value.append(character).toString());
+                list.addAll(scan(this.trie, line, index + 1, new StringBuilder(), false));
+                return list;
+            } else {
+                return scan(this.trie, line, index + 1, value.append(character), true);
+            }
         } else if (character.equals('\"')) {
             return scan(this.trie, line, index + 1, value.append(character), true);
         }
