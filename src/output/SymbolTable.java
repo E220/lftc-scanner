@@ -14,9 +14,13 @@ public class SymbolTable<T extends Comparable<T>> {
     }
 
     public int add(T value) {
-        items.add(value);
-        tree.getOrPut(value);
-        return items.size() - 1;
+        int index = items.indexOf(value);
+        if (index < 0) {
+            items.add(value);
+            tree.getOrPut(value);
+            return items.size() - 1;
+        }
+        return index;
     }
 
     public List<T> getItems() {
