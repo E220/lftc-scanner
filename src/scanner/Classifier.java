@@ -2,6 +2,7 @@ package scanner;
 
 import output.ProgramInternalForm;
 import output.SymbolTable;
+import readers.ReaderException;
 
 import java.util.*;
 import java.util.function.Consumer;
@@ -45,15 +46,20 @@ public class Classifier {
         );
     }
 
-    public void classifyAll(List<String> strings) {
-        strings.forEach(string -> {
+    public void classifyAll(List<String> strings) throws ReaderException {
+        for (final String string : strings) {
+            boolean success = false;
             for (final InternalClass internalClass : this.classes) {
                 if (internalClass.condition.matches(string)) {
                     internalClass.action.accept(string);
+                    success = true;
                     break;
                 }
             }
-        });
+            if (!success) {
+                throw new ReaderException("Could not classify: " + string);
+            }
+        }
     }
 
     public ProgramInternalForm getPif() {

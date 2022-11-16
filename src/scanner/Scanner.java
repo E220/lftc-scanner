@@ -2,6 +2,7 @@ package scanner;
 
 import container.MemoTrie;
 import output.ProgramInternalForm;
+import readers.ReaderException;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,11 +17,15 @@ public class Scanner {
         this.classifier = new Classifier(tokens);
     }
 
-    public void scan(List<String> lines) {
-        lines.forEach(line -> {
-            List<String> values = this.scan(this.trie, line, 0, new StringBuilder(), false, true);
-            this.classifier.classifyAll(values);
-        });
+    public void scan(List<String> lines) throws ReaderException {
+        for (int i = 0; i < lines.size(); i++) {
+            final List<String> values = this.scan(this.trie, lines.get(i), 0, new StringBuilder(), false, true);
+            try {
+                this.classifier.classifyAll(values);
+            } catch (ReaderException e) {
+                throw new ReaderException(e.getMessage() + ". Line number: " + i);
+            }
+        }
     }
 
     private List<String> scan(MemoTrie trie, String line, int index, StringBuilder value, boolean stringMode, boolean tokenMode) {

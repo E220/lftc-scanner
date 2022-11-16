@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="759839b1-6739-43b8-904d-a452313c439b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/output/SymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/output/SymbolTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lab34/p2.lyt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab34/p2.lyt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/p2.lyt" beforeDir="false" afterPath="$PROJECT_DIR$/src/p2.lyt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pif.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/pif.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scanner/Classifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/scanner/Classifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scanner/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/scanner/Scanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/st.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/st.out" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

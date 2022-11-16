@@ -22,7 +22,7 @@ public class Main {
 
         final ProgramReader programReader = new ProgramReader();
         try {
-            programReader.read("src/p1.lyt");
+            programReader.read("src/p2.lyt");
             List<String> lines = programReader.getLines();
             scanner.scan(lines);
         } catch (ReaderException e) {
