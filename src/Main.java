@@ -13,7 +13,6 @@ public class Main {
         try {
             tokenReader.read("src/token.in");
             final Set<String> tokens = tokenReader.getTokens();
-            System.out.println(tokens);
             scanner = new Scanner(tokens);
         } catch (ReaderException e) {
             System.out.println(e.getMessage());
@@ -24,7 +23,6 @@ public class Main {
         try {
             programReader.read("src/p1.lyt");
             List<String> lines = programReader.getLines();
-            System.out.println(lines);
             scanner.scan(lines);
         } catch (ReaderException e) {
             System.out.println(e.getMessage());

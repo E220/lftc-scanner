@@ -1,0 +1,9 @@
+do {
+    let n, pi2over6, newTerm be numbers.
+    read n.
+    for i from 1 up to n do {
+        let newTerm be 1 / (i * i).
+        let pi2over6 be pi2over6 + newTerm.
+    }
+    write "Pi squared is approximately", pi2over6 / 6.
+}

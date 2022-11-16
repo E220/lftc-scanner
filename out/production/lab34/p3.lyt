@@ -1,0 +1,16 @@
+do {
+    let n be a number.
+    read n.
+    let triangle be a vector of vectors of numbers.
+    let triangle[0][0] be 1.
+    for i from 1 to n do {
+        let triangle[i][0] be 1.
+        let triangle[i][i] be 1.
+        for j from 1 up to i - 1 do {
+            let triangle[i][j] be triangle[i - 1][j - 1] + triangle[i - 1][j].
+        }
+    }
+    for row in triangle do {
+        write row.
+    }
+}
