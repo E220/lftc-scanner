@@ -3,6 +3,7 @@ import readers.ReaderException;
 import readers.TokenReader;
 import scanner.Scanner;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 
@@ -25,6 +26,13 @@ public class Main {
             List<String> lines = programReader.getLines();
             scanner.scan(lines);
         } catch (ReaderException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            scanner.writePIF("src/pif.out");
+            scanner.writeSymbolTable("src/st.out");
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }

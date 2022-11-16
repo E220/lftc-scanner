@@ -1,7 +1,10 @@
 package scanner;
 
 import container.MemoTrie;
+import output.ProgramInternalForm;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class Scanner {
@@ -91,5 +94,22 @@ public class Scanner {
             list.add(last);
         }
         return list;
+    }
+
+    public void writePIF(String filename) throws IOException {
+        try (final FileWriter writer = new FileWriter(filename, false)) {
+            for (final ProgramInternalForm.Entry entry : this.classifier.getPif().getList()) {
+                writer.write(entry.token() + " " + entry.symbol() + "\n");
+            }
+        }
+    }
+
+    public void writeSymbolTable(String filename) throws IOException {
+        try (final FileWriter writer = new FileWriter(filename, false)) {
+            final List<String> symbols = this.classifier.getSymbolTable().getItems();
+            for (int i = 0; i < symbols.size(); i++) {
+                writer.write(i + " " + symbols.get(i) + "\n");
+            }
+        }
     }
 }

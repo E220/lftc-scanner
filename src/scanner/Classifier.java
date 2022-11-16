@@ -55,4 +55,12 @@ public class Classifier {
             }
         });
     }
+
+    public ProgramInternalForm getPif() {
+        return this.pif;
+    }
+
+    public SymbolTable<String> getSymbolTable() {
+        return this.symbolTable;
+    }
 }

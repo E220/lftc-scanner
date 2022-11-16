@@ -18,4 +18,8 @@ public class SymbolTable<T extends Comparable<T>> {
         tree.getOrPut(value);
         return items.size() - 1;
     }
+
+    public List<T> getItems() {
+        return this.items;
+    }
 }

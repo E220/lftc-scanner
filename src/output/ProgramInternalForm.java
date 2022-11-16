@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ProgramInternalForm {
-    private record Entry(String token, Integer symbol) {
+    public record Entry(String token, Integer symbol) {
     }
 
     private final List<Entry> list = new LinkedList<>();
