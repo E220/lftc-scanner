@@ -16,7 +16,7 @@ public class Scanner {
     public void scan(List<String> lines) {
         lines.forEach(line -> {
             List<String> values = this.scan(this.trie, line, 0, new StringBuilder(), false, true);
-            values.forEach(value -> System.out.println(value + " " + classifier.classify(value)));
+            this.classifier.classifyAll(values);
         });
     }
 
